@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.7.5+commit.eb77ed08"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "candidate",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "election",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Election.sol": "Election"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Election.sol": {
+			"keccak256": "0x3619c4dc2801ef3b34f57de48d234dbd5932c2d91d01957a85b615cf0e932e24",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ce0f15dde4a07cbad997023a7a3115bcf7703748ea7422898dc0e4287ff4e2d1",
+				"dweb:/ipfs/QmU6fr8fjpLVxkVbSbZ7dYCgj7xMo6QfaefKYGxXq3a8Qa"
+			]
+		}
+	},
+	"version": 1
+}
