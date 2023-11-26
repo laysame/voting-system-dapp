@@ -6,13 +6,42 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "candidate",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "candidates",
 				"outputs": [
 					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
 						"internalType": "string",
-						"name": "",
+						"name": "name",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "voteCount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "candidatesCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -54,11 +83,11 @@
 	},
 	"sources": {
 		"contracts/Election.sol": {
-			"keccak256": "0x3619c4dc2801ef3b34f57de48d234dbd5932c2d91d01957a85b615cf0e932e24",
+			"keccak256": "0x108dfe86e48d5c69aa78e5f0db3eb3e3d720abeee4afe087f1542041712f0774",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ce0f15dde4a07cbad997023a7a3115bcf7703748ea7422898dc0e4287ff4e2d1",
-				"dweb:/ipfs/QmU6fr8fjpLVxkVbSbZ7dYCgj7xMo6QfaefKYGxXq3a8Qa"
+				"bzz-raw://e932c8ea65b4f62b77cd865a30d4ff247a0d7e8d71ff634dcd9d93a94ed5a087",
+				"dweb:/ipfs/Qmf5wt3VGyG1F23DyC3Enm7DW9Px4wfUax8msiF4WZEW2S"
 			]
 		}
 	},
