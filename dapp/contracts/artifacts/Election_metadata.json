@@ -6,6 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_candidateId",
+						"type": "uint256"
+					}
+				],
+				"name": "votedEvent",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -115,11 +128,11 @@
 	},
 	"sources": {
 		"contracts/Election.sol": {
-			"keccak256": "0x261e85cf8cb74c504ffb9a898762473f57afbd7fa319a0e290c62ad64eac4dca",
+			"keccak256": "0xa33413c22d2c549e16fbc5cc81783998f68bc86303278283ca884038d71a3d0b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6275821c01e76a3e726f955d7113e943d952e6e74055186fa60b219c7a880a35",
-				"dweb:/ipfs/QmRHqaKjb2WFuMrxJJ8oG3u5cSURJ657r6oNzZW2zx94Nm"
+				"bzz-raw://a3e5f174d905dfbaa042537b9df14c15e5194f809af1316f3c3e937e8293e10c",
+				"dweb:/ipfs/QmdZce51QNcKjpJQ4WbBwdF8xyK3bbnTpjub1L28qEHxnk"
 			]
 		}
 	},

@@ -1,50 +1,62 @@
 // SPDX-License-Identifier: GPL-3.0
-
 pragma solidity >= 0.4.0 < 0.9.0;
 
 contract Election {
-    // Model a Candidate
+    // The candidate model
     struct Candidate {
-        uint id;
         string name;
-        uint voteCount;
+        uint index;
     }
 
-    // Store accounts that have voted
+    // List of candidates
+    mapping(uint => Candidate) private _candidates;
+
+    // Vote count for each candidate
+    mapping(uint => uint) private _candidateVotes;
+
+    // Counter for assigning unique IDs to candidates
+    uint public candidatesCounter;
+
+    // List of people who cast their vote
     mapping(address => bool) public voters;
-    // Read/write candidates
-    mapping(uint => Candidate) public candidates;
-    // Store Candidates Count
-    uint public candidatesCount;
 
-    function election () public {
-        addCandidate("Candidate 1");
-        addCandidate("Candidate 2");
+    constructor() {
+        // Add the candidates for the election
+        addCandidate("Cecilia Meireles");
+        addCandidate("Cora Coralina");
+        addCandidate("Adelia Prado");
     }
 
-    function addCandidate (string memory _name) private {
-        candidatesCount ++;
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
+    function addCandidate(string memory name_) private  {
+        _candidates[candidatesCounter] = Candidate(name_, candidatesCounter);
+        candidatesCounter++;
     }
 
-    event votedEvent (
-        uint indexed _candidateId
-    );
+    function getCandidateByIndex(uint candidateIndex_) external view returns (Candidate memory candidate) {
+        // Make sure the candidate exist
+        require(candidateIndex_ >= 0 && candidateIndex_ < candidatesCounter, "Candidate index is not valid");
 
-    function vote (uint _candidateId) public {
-        // require that they haven't voted before
-        require(!voters[msg.sender]);
+        candidate = _candidates[candidateIndex_];
+    }
 
-        // require a valid candidate
-        require(_candidateId > 0 && _candidateId <= candidatesCount);
+    function castVote(uint candidateIndex_) external {
+        // Ensure each address only votes once
+        require(!voters[msg.sender], "Address already cast a vote for the election");
 
-        // record that voter has voted
+        // Make sure the candidate exist
+        require(candidateIndex_ >= 0 && candidateIndex_ < candidatesCounter, "Candidate index is not valid");
+
+        _candidateVotes[candidateIndex_]++;
         voters[msg.sender] = true;
+    }
 
-        // update candidate vote Count
-        candidates[_candidateId].voteCount ++;
+    function getVoteCounts() external view returns (uint[] memory) {
+        uint[] memory result = new uint[](candidatesCounter);
 
-        // trigger voted event
-        emit votedEvent(_candidateId);
+        for (uint i = 0; i < candidatesCounter; i++) {
+            result[i] = _candidateVotes[i];
+        }
+
+        return result;
     }
 }
