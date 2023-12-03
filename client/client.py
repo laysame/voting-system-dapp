@@ -2,7 +2,7 @@ import click
 from web3 import Web3
 
 GANACHE_DEFAULT_ENDPOINT_URI = "http://127.0.0.1:7545"
-CONTRACT_ABI_DEFAULT_FILE_PATH = "./dapp/contracts/Election.abi.json"
+CONTRACT_ABI_DEFAULT_FILE_PATH = "./client/contracts/Election.abi.json"
 
 
 class Client:
