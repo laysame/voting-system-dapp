@@ -2,7 +2,7 @@
 name = "voting-system-dapp"
 version = "0.1.0"
 description = ""
-authors = ["Laysa Souza <karollinylaysa@gmail.com>"]
+authors = ["Laysa Souza <2021295@student.cct.ie>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
